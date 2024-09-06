@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import appwriteService from '../AppWrite/Config.js'
 import {Container} from '../compoent/index.js'
 import { PostCard } from '../compoent/index'

@@ -1,7 +1,8 @@
 import React, { useCallback } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { Button, Input, RTE, Select } from "..";
-import appwriteService from '../../AppWrite/Config'
+import appwriteService from '../../AppWrite/Config';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -120,3 +121,19 @@ export default function PostForm({ post }) {
         </form>
     );
 }
+
+// Add PropTypes for validation
+PostForm.propTypes = {
+    post: PropTypes.shape({
+        $id: PropTypes.string,
+        title: PropTypes.string,
+        content: PropTypes.string,
+        status: PropTypes.string,
+        featuredImage: PropTypes.string,
+    }),
+};
+
+// Provide defaultProps in case no post is passed
+PostForm.defaultProps = {
+    post: null,
+};
